@@ -50,8 +50,6 @@ public class OrderService {
             orderDeliveredProducer.produce(new OrderDeliveredMessage(order));
             logger.info("OrderDelivered with: {}", request);
         }
-        //TODO:: update order status and if status is delivered produce orderDeliveredEvent.
-        //TODO:: Afterwards create payment by calling PaymentService after consuming orderDeliveredEvent
         return new OrderResponse(order);
     }
 }
